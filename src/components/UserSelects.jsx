@@ -83,7 +83,7 @@ const UserSelects = () => {
       dataRef.splice((pageNumber - 1) * 20, 20, ...modified);
       setData(dataRef);
     }
-  }, [seed]);
+  }, [seed,data,pageNumber,selected,setData,value]);
 
   return (
     <Form>
