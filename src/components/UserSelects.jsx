@@ -52,14 +52,7 @@ const UserSelects = () => {
   }, [data, sliceIndex]);
 
   useEffect(() => {
-    if (selected.length && selected.length < 3) {
-      setErrors((prev) => ({
-        ...prev,
-        countries: "Please select at least 3 country",
-      }));
-    } else {
-      setErrors((prev) => ({ ...prev, countries: null }));
-    }
+    
 
     if (value > 1000) {
       setErrors((prev) => ({
@@ -70,12 +63,11 @@ const UserSelects = () => {
       setErrors((prev) => ({ ...prev, errors: null }));
     }
 
-    if (selected.length && selected.length >= 3 && value <= 1000) {
-      console.log("au aqac");
+    if (selected.length &&  value <= 1000) {
       const data = makeData(seed, selected, value, 0, 1000);
       setData(data);
     }
-  }, [selected, value]);
+  }, [selected, value,seed,setData]);
 
   useEffect(() => {
     if (pageNumber) {
